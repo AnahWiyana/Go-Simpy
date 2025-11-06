@@ -1,19 +1,104 @@
+import os
 import sys
 from akun import akun
 
 sudah_login = False
 akun_sekarang = None
 
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
 def login():
-	global sudah_login, akun_sekarang
-	maksimal_percobaan = 5
-	percobaan = 0
-	while percobaan < maksimal_percobaan:
-		# Fungsi loginnya disini
+    global sudah_login, akun_sekarang
+    maksimal_percobaan = 5
+    percobaan = 0
+
+    while percobaan < maksimal_percobaan:
+        clear()
+        print("=== SISTEM LOGIN GO-SIMPY ===")
+        username = input("Masukkan Username : ").strip()
+        password = input("Masukkan Password : ").strip()
+
+        if username in akun and akun[username]["password"] == password:
+            sudah_login = True
+            akun_sekarang = akun[username]
+            clear()
+            print(f"Selamat datang, {akun_sekarang['nama_lengkap']} ({akun_sekarang['role'].capitalize()})!")
+            input("Tekan Enter untuk melanjutkan...")
+            menu_utama()
+            return
+        else:
+            percobaan += 1
+            print("Username atau password salah!")
+            input("Tekan Enter untuk mencoba lagi...")
+
+    print("\nTerlalu banyak percobaan gagal. Program keluar.")
+    sys.exit()
 
 def logout():
-	global sudah_login, akun_sekarang
-	sudah_login = False
-	user_sekarang = None
-	print("Anda telah Logout")
-	input("Tekan Enter untuk kembali...")
+    global sudah_login, akun_sekarang
+    sudah_login = False
+    akun_sekarang = None
+    print("Anda telah logout.")
+    input("Tekan Enter untuk kembali ke menu login...")
+    login()
+
+def menu_utama():
+    """Menu utama sesuai role"""
+    clear()
+    if akun_sekarang["role"] == "admin":
+        menu_admin()
+    elif akun_sekarang["role"] == "driver":
+        menu_driver()
+    else:
+        print("Role tidak dikenali.")
+        input("Tekan Enter untuk keluar...")
+        sys.exit()
+
+def menu_admin():
+    while True:
+        clear()
+        print("=== MENU ADMIN ===")
+        print("1. Lihat data pesanan")
+        print("2. Lihat grafik pendapatan")
+        print("3. Logout")
+
+        pilihan = input("Pilih menu: ")
+        if pilihan == "1":
+            print("Menampilkan data pesanan (belum diimplementasi)...")
+            input("Tekan Enter...")
+        elif pilihan == "2":
+            print("Menampilkan grafik pendapatan (belum diimplementasi)...")
+            input("Tekan Enter...")
+        elif pilihan == "3":
+            logout()
+            break
+        else:
+            print("Pilihan tidak valid!")
+            input("Tekan Enter...")
+
+def menu_driver():
+    while True:
+        clear()
+        print("=== MENU DRIVER ===")
+        print("1. Lihat pesanan hari ini")
+        print("2. Update status pesanan")
+        print("3. Logout")
+
+        pilihan = input("Pilih menu: ")
+        if pilihan == "1":
+            print("Menampilkan pesanan hari ini (belum diimplementasi)...")
+            input("Tekan Enter...")
+        elif pilihan == "2":
+            print("Update status pesanan (belum diimplementasi)...")
+            input("Tekan Enter...")
+        elif pilihan == "3":
+            logout()
+            break
+        else:
+            print("Pilihan tidak valid!")
+            input("Tekan Enter...")
+
+
+if __name__ == "__main__":
+    login()
