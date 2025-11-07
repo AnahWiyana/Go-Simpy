@@ -44,3 +44,12 @@ def tampilkan_daftar_akun():
 	print("===Daftar User===")
 	print(table)
 	input("Tekan Enter untuk kembali...")
+
+def akun_ada(username):
+    return username in users
+
+def dapatkan_data_akun(username):
+    return akun.get(username)
+
+def dapatkan_semua_akun():
+    return users

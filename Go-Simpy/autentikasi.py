@@ -43,62 +43,9 @@ def logout():
     input("Tekan Enter untuk kembali ke menu login...")
     login()
 
-def menu_utama():
-    """Menu utama sesuai role"""
-    clear()
-    if akun_sekarang["role"] == "admin":
-        menu_admin()
-    elif akun_sekarang["role"] == "driver":
-        menu_driver()
-    else:
-        print("Role tidak dikenali.")
-        input("Tekan Enter untuk keluar...")
-        sys.exit()
+def apakah_sudah_login():
+	return sudah_login
 
-def menu_admin():
-    while True:
-        clear()
-        print("=== MENU ADMIN ===")
-        print("1. Lihat data pesanan")
-        print("2. Lihat grafik pendapatan")
-        print("3. Logout")
-
-        pilihan = input("Pilih menu: ")
-        if pilihan == "1":
-            print("Menampilkan data pesanan (belum diimplementasi)...")
-            input("Tekan Enter...")
-        elif pilihan == "2":
-            print("Menampilkan grafik pendapatan (belum diimplementasi)...")
-            input("Tekan Enter...")
-        elif pilihan == "3":
-            logout()
-            break
-        else:
-            print("Pilihan tidak valid!")
-            input("Tekan Enter...")
-
-def menu_driver():
-    while True:
-        clear()
-        print("=== MENU DRIVER ===")
-        print("1. Lihat pesanan hari ini")
-        print("2. Update status pesanan")
-        print("3. Logout")
-
-        pilihan = input("Pilih menu: ")
-        if pilihan == "1":
-            print("Menampilkan pesanan hari ini (belum diimplementasi)...")
-            input("Tekan Enter...")
-        elif pilihan == "2":
-            print("Update status pesanan (belum diimplementasi)...")
-            input("Tekan Enter...")
-        elif pilihan == "3":
-            logout()
-            break
-        else:
-            print("Pilihan tidak valid!")
-            input("Tekan Enter...")
-
-
-if __name__ == "__main__":
-    login()
+def username_akun_sekarang():
+	return akun_sekarang
+	input("Tekan Enter...")
