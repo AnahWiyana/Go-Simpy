@@ -23,9 +23,28 @@ def tambah_akun(username, password, nama_lengkap, umur, nomor_telepon, alamat_em
     print(f"Akun {username} berhasil ditambahkan sebagai {role}.")
     
 def hapus_akun(username):
- 
+    for akun in data_akun:
+        if akun["username"] == username:
+            data_akun.remove(akun)
+            print(f"Akun '{username}' berhasil dihapus.")
+            return
+    print(f"Akun dengan username {username} tidak ditemukan.")
+
 def edit_profil(username, password, nama_lengkap=None, umur=None, no_telepon=None, alamat_email=None):
-	# Fungsi edit profil akun
+    for akun in data_akun:
+        if akun["username"] == username and akun["password"] == password:
+            if nama_lengkap:
+                akun["nama_lengkap"] = nama_lengkap
+            if umur:
+                akun["umur"] = umur
+            if no_telepon:
+                akun["nomor_telepon"] = no_telepon
+            if alamat_email:
+                akun["alamat_email"] = alamat_email
+
+            print(f"Profil akun {username} berhasil diperbarui.")
+            return
+    print("Username atau password salah. Profil tidak dapat diperbarui.")
 
 def tampilkan_daftar_akun():
 	table = PrettyTable()
