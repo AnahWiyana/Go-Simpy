@@ -4,7 +4,6 @@ from akun import akun
 data_akun = []
 
 def tambah_akun(username, password, nama_lengkap, umur, nomor_telepon, alamat_email, role="pengguna"):
-    # Cek apakah username sudah ada
     for akun in data_akun:
         if akun["username"] == username:
             print("Username sudah digunakan, silakan pilih username lain.")
@@ -21,11 +20,10 @@ def tambah_akun(username, password, nama_lengkap, umur, nomor_telepon, alamat_em
     }
 
     data_akun.append(akun_baru)
-    print(f"Akun '{username}' berhasil ditambahkan sebagai {role}.")
+    print(f"Akun {username} berhasil ditambahkan sebagai {role}.")
     
 def hapus_akun(username):
-	# Fungsi hapus akun berdasarkan username akun
-
+ 
 def edit_profil(username, password, nama_lengkap=None, umur=None, no_telepon=None, alamat_email=None):
 	# Fungsi edit profil akun
 
