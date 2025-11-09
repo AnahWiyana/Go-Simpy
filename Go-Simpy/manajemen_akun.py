@@ -65,8 +65,9 @@ def tampilkan_daftar_akun():
 def akun_ada(username):
     return username in users
 
-def dapatkan_data_akun(username):
+def username_akun_sekarang(username):
     return akun.get(username)
 
 def dapatkan_semua_akun():
     return users
+

@@ -1,10 +1,18 @@
 from akun import akun
-from tampilan import tampilkan_menu_login
-from autentikasi import (login, logout, apakah_sudah_login, username_akun_sekarang)
+from tampilan import (tampilkan_menu_login, tampilkan_menu_utama)
+from autentikasi import (login, logout, apakah_sudah_login, dapatkan_data_akun)
+from manajemen_akun import (username_akun_sekarang)
+
+def menu_admin():
+	akun_sekarang = dapatkan_data_akun
+	while True:
+		tampilkan_menu_utama()
+		pilihan = input("Pilih menu: ").strip()
+	
 
 if __name__ == "__main__":
 	while True:
-		if not apakah_sudah_login():
+		if apakah_sudah_login() == False: 
 			tampilkan_menu_login()
 			pilihan = input("Pilih menu: ")
 
@@ -23,8 +31,8 @@ if __name__ == "__main__":
 				input("Tekan Enter untuk kembali")
 
 		else:
-			username = username_akun_sekarang()
-			role = dapatkan_data_akun(username)["role"]
+			akun_sekarang = dapatkan_data_akun()
+			role = username_akun_sekarang(akun_sekarang)["role"]
 
 			if role == "admin":
 				menu_admin()
