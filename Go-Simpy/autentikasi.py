@@ -2,7 +2,6 @@ import os
 import sys
 from akun import akun
 
-# Variabel global
 sudah_login = False
 akun_sekarang = None
 
@@ -40,10 +39,3 @@ def logout():
 	akun_sekarang = None
 	print("Anda telah logout, silahkan login kembali")
 	input("Tekan Enter untuk kembali...")	
-
-def apakah_sudah_login():
-	return sudah_login
-
-def dapatkan_data_akun():
-	return akun_sekarang
-
