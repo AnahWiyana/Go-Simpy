@@ -1,6 +1,8 @@
+import sys
+
 from akun import akun
 from tampilan import (tampilkan_menu_login, tampilkan_menu_utama)
-from autentikasi import (login, logout, apakah_sudah_login, dapatkan_data_akun)
+from autentikasi import (login, logout, sudah_login, dapatkan_data_akun)
 from manajemen_akun import (username_akun_sekarang)
 
 def menu_admin():
@@ -8,11 +10,14 @@ def menu_admin():
 	while True:
 		tampilkan_menu_utama()
 		pilihan = input("Pilih menu: ").strip()
+		if pilihan == "5":
+			logout()
+		
 	
 
 if __name__ == "__main__":
 	while True:
-		if apakah_sudah_login() == False: 
+		if sudah_login == False: 
 			tampilkan_menu_login()
 			pilihan = input("Pilih menu: ")
 
