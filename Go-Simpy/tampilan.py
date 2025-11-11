@@ -44,7 +44,7 @@ def tampilkan_menu_utama():
 
     elif role == "driver":
         print("=== MENU DRIVER ===")
-        print("1. Lihat Daftar Order Masuk")
+        print("1. Liat Daftar Order Masuk")
         print("2. Lihat Pendapatan")
         print("3. Edit Profil")
         print("4. Logout")
