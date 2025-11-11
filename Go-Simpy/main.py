@@ -2,7 +2,7 @@ import sys
 
 from akun import akun
 from tampilan import (tampilkan_menu_login, tampilkan_menu_utama)
-from autentikasi import (login, logout, sudah_login, dapatkan_data_akun)
+from autentikasi import (login, logout, sudah_login, dapatkan_data_akun, registrasi)
 from manajemen_akun import (username_akun_sekarang)
 
 def menu_admin():
@@ -41,9 +41,6 @@ if __name__ == "__main__":
 
 			if role == "admin":
 				menu_admin()
-
-			elif role == "manager":
-				menu_manager()
 
 			elif role == "pelanggan":
 				menu_customer()
