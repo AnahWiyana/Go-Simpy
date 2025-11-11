@@ -63,11 +63,11 @@ def tampilkan_daftar_akun():
 	input("Tekan Enter untuk kembali...")
 
 def akun_ada(username):
-    return username in users
+    return username in data_akun
 
 def username_akun_sekarang(username):
     return akun.get(username)
 
 def dapatkan_semua_akun():
-    return users
+    return data_akun
 
