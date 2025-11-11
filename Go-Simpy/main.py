@@ -6,14 +6,31 @@ from autentikasi import (login, logout, sudah_login, dapatkan_data_akun, registr
 from manajemen_akun import (username_akun_sekarang)
 
 def menu_admin():
-	akun_sekarang = dapatkan_data_akun
+	akun_sekarang = dapatkan_data_akun()
 	while True:
 		tampilkan_menu_utama()
 		pilihan = input("Pilih menu: ").strip()
 		if pilihan == "5":
 			logout()
-		
-	
+			break
+
+def menu_customer():
+	akun_sekarang = dapatkan_data_akun()
+	while True:
+		tampilkan_menu_utama()
+		pilihan = input("Pilih menu: ").strip()
+		if pilihan == "5":
+			logout()
+			break
+
+def menu_driver():
+	akun_sekarang = dapatkan_data_akun()
+	while True:
+		tampilkan_menu_utama()
+		pilihan = input("Pilih menu: ").strip()
+		if pilihan == "5":
+			logout()
+			break
 
 if __name__ == "__main__":
 	while True:

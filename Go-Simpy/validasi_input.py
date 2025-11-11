@@ -3,7 +3,7 @@ def validasi_input_email(email):
 
 def validasi_input_umur(umur):
 	try:
-		umur = int(umur_string)
+		umur = int(umur)
 		return umur if 1 <= umur <= 100 else None
 		""" Sama aja kayak gini:
 		if 1 <= umur <= 150:

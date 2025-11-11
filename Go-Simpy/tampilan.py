@@ -26,40 +26,29 @@ def tampilkan_menu_utama():
     print(f"Selamat datang, {data_akun['nama_lengkap']} ({role.capitalize()})")
     print("=" * 40)
 
-    # ==== MENU ===========
     if role == "admin":
         print("=== MENU ADMIN ===")
-        print("1. Tambah User")
-        print("2. Hapus User")
-        print("3. Lihat Daftar User")
-        print("4. Edit Profil")
+        print("1. Edit Profil")
+        print("2. Tambah Akun")
+        print("3. Hapus Akun")
+        print("4. Lihat Daftar Akun")
         print("5. Logout")
         print("6. Keluar Program")
 
     elif role == "customer":
         print("=== MENU CUSTOMER ===")
-        print("1. Pesan Layanan")
+        print("1. Edit profil")
         print("2. Lihat Riwayat Pesanan")
-        print("3. Edit Profil")
-        print("4. Logout")
-        print("5. Keluar Program")
-
-    elif role == "manager":
-        print("=== MENU MANAGER ===")
-        print("1. Naikkan Gaji Driver")
-        print("2. Grafik Penghasilan Driver")
-        print("3. Edit Profil")
-        print("4. Logout")
-        print("5. Keluar Program")
+        print("3. Logout")
+        print("4. Keluar Program")
 
     elif role == "driver":
         print("=== MENU DRIVER ===")
         print("1. Lihat Daftar Order Masuk")
-        print("2. Konfirmasi Order")
-        print("3. Lihat Penghasilan")
-        print("4. Edit Profil")
-        print("5. Logout")
-        print("6. Keluar Program")
+        print("2. Lihat Pendapatan")
+        print("3. Edit Profil")
+        print("4. Logout")
+        print("5. Keluar Program")
 
     else:
         print("Role tidak dikenal!")
